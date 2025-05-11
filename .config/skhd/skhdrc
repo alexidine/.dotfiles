@@ -1,0 +1,126 @@
+
+# +-------------------+
+# |   YABAI HOTKEYS   |
+# +-------------------+
+
+#  NOTE: to view keycodes, launch skhd in observer mode: `skhd --observe` 
+#         or `skhd -o`. Press `ctrl+c` to quit.
+#
+#  NOTE: a list of all built-in modifier and literal keywords can be found 
+#         at https://github.com/koekeishiya/skhd/issues/1
+
+#  TODO: Find more comfortable hotkeys for increasing and decreasing window size
+#  TODO: Create hotkeys for making floating windows smaller / larger
+#      - Note that for keycodes, -: 0x1B and =: 0x18
+
+# focus window
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+
+# swap managed window
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - h : yabai -m window --swap west
+shift + alt - l : yabai -m window --swap east
+
+# move managed window
+shift + cmd - j : yabai -m window --warp south
+shift + cmd - k : yabai -m window --warp north
+shift + cmd - h : yabai -m window --warp west
+shift + cmd - l : yabai -m window --warp east
+
+# balance window size   # --  TESTING: Choose one hotkey
+alt - e : yabai -m space --balance
+alt - b : yabai -m space --balance
+
+# floating window fills (based on Rectangle Mac)
+ctrl + alt - left   : yabai -m window --grid 1:2:0:0:1:1    # floating window fill left-half of screen
+ctrl + alt - right  : yabai -m window --grid 1:2:1:0:1:1    # floating window fill right-half of screen
+ctrl + alt - up     : yabai -m window --grid 2:1:0:0:1:1    # floating window fill top-half of screen
+ctrl + alt - down   : yabai -m window --grid 2:1:0:1:1:1    # floating window fill bottom-half of screen
+
+ctrl + alt - u      : yabai -m window --grid 4:4:0:0:2:2    # floating window fill top-left
+ctrl + alt - i      : yabai -m window --grid 4:4:2:0:2:2    # floating window fill top-right
+ctrl + alt - j      : yabai -m window --grid 4:4:0:2:2:2    # floating window fill bottom-left
+ctrl + alt - k      : yabai -m window --grid 4:4:2:2:2:2    # floating window fill bottom-right
+
+ctrl + alt - return : yabai -m window --grid 1:1:0:0:1:1    # floating window maximize
+ctrl + alt - c      : yabai -m window --grid 8:8:1:1:6:6    # floating window center
+
+# focus desktop   # --  ISSUE: SIP must be paritally disabled
+alt - n : yabai -m space --focus next
+alt - p : yabai -m space --focus prev
+
+# send window to desktop and follow focus   # --  ISSUE: following focus to desktops doesn't work with SIP
+shift + alt - n : yabai -m window --space next # ; yabai -m space --focus next
+shift + alt - p : yabai -m window --space prev # ; yabai -m space --focus prev
+
+# focus monitor
+alt - g : yabai -m display --focus east
+alt - s : yabai -m display --focus west
+
+alt - 0x1E : yabai -m display --focus next  # close bracket ]
+alt - 0x21 : yabai -m display --focus prev  # open bracket [
+
+# send window to monitor and follow focus   # --  HACK: do i want to send window to monitor without following focus ?
+shift + alt - g : yabai -m window --display east # ; yabai -m display --focus east;
+shift + alt - s : yabai -m window --display west # ; yabai -m display --focus west;
+
+shift + alt - 0x1E : yabai -m window --display next; yabai -m display --focus next;  # close bracket ]
+shift + alt - 0x21 : yabai -m window --display prev; yabai -m display --focus prev;  # open bracket [
+
+# move floating window
+shift + ctrl - k : yabai -m window --move rel:0:-20
+shift + ctrl - j : yabai -m window --move rel:0:20
+shift + ctrl - h : yabai -m window --move rel:-20:0
+shift + ctrl - l : yabai -m window --move rel:20:0
+
+# increase window size      # --  ISSUE: idk it's weird
+# shift + ctrl - up     : yabai -m window --resize top:0:-20
+# shift + ctrl - down   : yabai -m window --resize bottom:0:20
+# shift + ctrl - left   : yabai -m window --resize left:-20:0
+# shift + ctrl - right  : yabai -m window --resize right:20:0
+
+# decrease window size      # --  ISSUE: confusing (?) keybindings
+# shift + alt - down    : yabai -m window --resize top:0:20
+# shift + alt - up      : yabai -m window --resize bottom:0:-20
+# shift + alt - right   : yabai -m window --resize left:20:0
+# shift + alt - left    : yabai -m window --resize right:-20:0
+
+# toggle window zoom
+alt - d : yabai -m window --toggle zoom-parent
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# rotate window layout clockwise
+alt - r : yabai -m space --rotate 270
+
+# float / unfloat window and center on screen
+alt - t : yabai -m window --toggle float --grid 6:6:1:1:4:4
+
+# toggle sticky(+float), picture-in-picture     # --  ISSUE: requires partial disabling of SIP
+alt - p : yabai -m window --toggle sticky --toggle pip
+
+# +-----------------+
+# |  OTHER HOTKEYS  |
+# +-----------------+
+
+# open terminal, alacritty at the moment
+shift + cmd - return : open -na /Applications/Ghostty.app
+
+# open finder
+shift + alt - return : open ~/
+
+# open alacritty
+shift + ctrl - a : open -na /Applications/Alacritty.app
+
+# open ghostty
+shift + ctrl - g : open -na /Applications/Ghostty.app
+
+# open neovim
+shift + ctrl - n : open -na /Applications/neovim.app
+
+# open Pokemon White 2 in default application
+hyper - return : open ~/Library/Application\ Support/melonDS/roms/Nintendo\ DS/Pokemon\ -\ White\ Version\ 2\ \(USA,\ Europe\)\ \(NDSi\ Enhanced\).nds
+

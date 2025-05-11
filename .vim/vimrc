@@ -1,0 +1,80 @@
+" disable compatibility with vi
+set nocompatible
+
+" set viminfo
+set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/cache/.viminfo
+"           | |    |   |   |    | |  + viminfo file path
+"           | |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
+"           | |    |   |   |    + disable 'hlsearch' loading viminfo
+"           | |    |   |   + command-line history saved
+"           | |    |   + search history saved
+"           | |    + files marks saved
+"           | + lines saved each register (new name for ", vi6.2)
+"           + save/restore buffer list
+
+" enable type file detection
+filetype on
+
+" enable plugins and load plugin for detected file type
+filetype plugin on
+
+" load an indent file for the detected file type
+filetype indent on
+
+
+syntax on                       " turn on syntax highlighting
+
+set number                      " show current line number
+set relativenumber              " show relative line numbers
+set cursorline                  " highlight cursor line
+
+set linebreak
+set wrap
+
+set showmode                    " show current mode on last line
+
+set wildmenu                    " enable auto-completion menu after pressing TAB
+set wildmode=list:longest       " make wildmenu behave similar to Bash completion
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+set scrolloff=40
+
+
+" note: za to toggle folds
+" note: zR to open all folds
+" note: zM to close all folds
+
+" PLUGINS ---------------------------------------------------------------- {{{
+
+" Plugin code goes here.
+
+" }}}
+
+
+" MAPPINGS --------------------------------------------------------------- {{{
+
+" Mappings code goes here.
+
+" }}}
+
+
+" VIMSCRIPT -------------------------------------------------------------- {{{
+
+" This will enable code folding.
+" Use the marker method of folding.
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+
+" More Vimscripts code goes here.
+
+" }}}
+
+
+" STATUS LINE ------------------------------------------------------------ {{{
+
+" Status bar code goes here.
+
+" }}}

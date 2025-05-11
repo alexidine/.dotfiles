@@ -1,0 +1,43 @@
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 5, y = 5 }
+decorations = "Buttonless"
+opacity = 0.8
+dynamic_title = true
+option_as_alt = "Both"
+
+[font]
+# brew install font-meslo-lg-nerd-font
+normal.family = "MesloLGS Nerd Font Mono"
+size = 13.5
+
+[cursor]
+style = { shape = "Underline", blinking = "On" }
+
+[colors.primary]
+background = "#000000"
+foreground = "#c7c7c7"
+
+[colors.normal]
+black   = "#181818"
+red     = "#aa4243"
+green   = "#8fa959"
+yellow  = "#f4bf74"
+blue    = "#699fb4"
+magenta = "#a9759f"
+cyan    = "#76b5ab"
+white   = "#d8d8d8"
+
+[colors.bright]
+black   = "#6b6b6b"
+red     = "#c55556"
+green   = "#aac473"
+yellow  = "#feca87"
+blue    = "#80bac6"
+magenta = "#c28db7"
+cyan    = "#93d3c2"
+white   = "#f8f8f8"
+

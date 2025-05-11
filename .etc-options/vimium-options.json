@@ -1,0 +1,68 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nmap e passNextKey\nmap I LinkHints.activateModeToOpenIncognito",
+  "newTabUrl": "pages/blank.html",
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ny: https://www.youtube.com/results?search_query=%s Youtube\nd: https://duckduckgo.com/?q=%s DuckDuckGo\ng: https://github.com/search?q=%s GitHub\nm: https://mangadex.org/search?q=%s MangaDex\nt: https://translate.google.com/?sl=auto&tl=en&text=%s&op=translate Google translate\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "settingsVersion": "2.2.1",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://localhost:8889/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://colab.research.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://jstris.jezevec10.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.typelit.io/*"
+    },
+    {
+      "passKeys": "xomtrpvb",
+      "pattern": "https?://monkeytype.com/*"
+    },
+    {
+      "passKeys": "fg",
+      "pattern": "https?://www.netflix.com/watch/*"
+    },
+    {
+      "passKeys": "fm",
+      "pattern": "https?://www.twitch.tv/piantalol*"
+    },
+    {
+      "passKeys": "fm",
+      "pattern": "https?://www.twitch.tv/*"
+    },
+    {
+      "passKeys": "mfvsdzxrg[]",
+      "pattern": "https?://www.bilibili.com/video/*"
+    },
+    {
+      "passKeys": "zxcvgrfm",
+      "pattern": "https?://hianime.to/*"
+    },
+    {
+      "passKeys": "zxgvsdr",
+      "pattern": "https?://www.facebook.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://localhost:8888/*"
+    },
+    {
+      "passKeys": "gf",
+      "pattern": "https?://www.hulu.com/watch/*"
+    },
+    {
+      "passKeys": "tvsdzxrgim",
+      "pattern": "https?://www.youtube.com/watch*"
+    },
+    {
+      "passKeys": "i",
+      "pattern": "https?://www.youtube.com/*"
+    }
+  ]
+}

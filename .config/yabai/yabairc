@@ -1,0 +1,95 @@
+#!/usr/bin/env sh
+
+#
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+#
+# see this wiki page for information:
+#  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
+#
+# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+# sudo yabai --load-sa
+#
+#
+# The following features of yabai require System Integrity Protection to be (partially) disabled:
+#
+# - focus/move/swap/create/destroy space
+# - remove window shadows
+# - enable window transparency
+# - enable window animations
+# - scratchpad windows
+# - control window layers (make windows appear topmost or on the desktop)
+# - sticky windows (make windows appear on all spaces on the display that contains the window)
+# - toggle picture-in-picture for any given window
+#
+# If you do not care about the above set of features you can use yabai just fine without touching SIP settings.
+#
+
+# global settings
+yabai -m config                                 \
+    external_bar                 off:40:0       \
+    menubar_opacity              1.0            \
+    mouse_follows_focus          on             \
+    focus_follows_mouse          off            \
+    display_arrangement_order    default        \
+    window_origin_display        default        \
+    window_placement             second_child   \
+    window_zoom_persist          on             \
+    window_shadow                off            \
+    window_animation_duration    0.0            \
+    window_animation_easing      ease_out_circ  \
+    window_opacity_duration      0.0            \
+    active_window_opacity        1.0            \
+    normal_window_opacity        0.90           \
+    window_opacity               off            \
+    insert_feedback_color        0xffd75f5f     \
+    split_ratio                  0.50           \
+    split_type                   auto           \
+    auto_balance                 off            \
+    top_padding                  08             \
+    bottom_padding               08             \
+    left_padding                 08             \
+    right_padding                08             \
+    window_gap                   08             \
+    layout                       bsp            \
+    mouse_modifier               alt            \
+    mouse_action1                move           \
+    mouse_action2                resize         \
+    mouse_drop_action            swap
+
+# apps yabai should not manage
+yabai -m rule --add app="Amphetamine"           manage=off
+yabai -m rule --add app="AppCleaner"            manage=off
+yabai -m rule --add app="App Store"             manage=off
+yabai -m rule --add app="Archive Utility"       manage=off
+yabai -m rule --add app="Bloons TD Battles"     manage=off
+yabai -m rule --add app="Books"                 manage=off
+yabai -m rule --add app="Calculator"            manage=off
+yabai -m rule --add app="Cemu.*"                  manage=off
+yabai -m rule --add app="Desk View"             manage=off
+yabai -m rule --add app="DesktopLauncher"       manage=off
+yabai -m rule --add app="FaceTime"              manage=off
+yabai -m rule --add app="IINA"                  manage=off
+yabai -m rule --add app="Image2icon"            manage=off
+yabai -m rule --add app="League of Legends"            manage=off
+yabai -m rule --add app="Logitech G HUB"        manage=off
+yabai -m rule --add app="Minecraft"             manage=off
+yabai -m rule --add app="Minecraft Launcher"    manage=off
+yabai -m rule --add app="Minesweeper"           manage=off
+yabai -m rule --add app="Molar"                 manage=off
+yabai -m rule --add app="NordVPN"               manage=off
+yabai -m rule --add app="OpenEmu"               manage=off
+yabai -m rule --add app="QuickTime Player"      manage=off
+yabai -m rule --add app="Riot Client"            manage=off
+yabai -m rule --add app="^Ryujinx.*"            manage=off
+yabai -m rule --add app="Steam"                 manage=off
+yabai -m rule --add app="Stickies"              manage=off
+yabai -m rule --add app="System Settings"       manage=off
+yabai -m rule --add app="Terraria"              manage=off
+yabai -m rule --add app="VLC media player"      manage=off
+yabai -m rule --add app="Weather"               manage=off
+
+# highlight the focused window
+# https://www.github.com/FelixKratz/JankyBorders
+# borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=4.0 &
+
